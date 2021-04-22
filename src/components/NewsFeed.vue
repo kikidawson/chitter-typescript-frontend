@@ -2,14 +2,18 @@
   <div class="newsfeed">
     <h3>This is the news feed</h3>
     <div class="peeps">
-      <div class="peep">
-       {{ data }}
-      </div>        
+      <div id='example-1'>
+        <ul>
+          <li v-for="comments in data" :key='comments'>{{ comments.id }}. {{ comments.body }}</li>
+        </ul>   
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+// import Vue from 'vue';
+
 export default {
   name: 'NewsFeed',
   data() {
@@ -17,33 +21,33 @@ export default {
       data: {}
     }
   },
-    beforeMount() {
-    this.getPeep();
+  beforeMount() {
+    this.getPeeps();
   },
   methods: {
-    async getPeep() {
+    async getPeeps() {
       const res = await fetch("https://jsonplaceholder.typicode.com/comments");
       const data = await res.json();
-      
-      const result = data.map(comments => 
-        comments.map(comment => comment.body)
-        )
-      
-      this.data = result
-
-      
+      this.data = data;
     }
   }
 }
 
+// var example1 = new Vue({
+//   el: '#example-1',
+//   data: {
+//     items: [
+//       '10 party hats',
+//       '2 board games',
+//       '20 cups'
+//     ]
+//   }
+// })
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
-}
-a {
-  color: #42b983;
 }
 </style>
