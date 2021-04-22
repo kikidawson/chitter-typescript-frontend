@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <NewsFeed peep="This is the first peep"/>
+    <NewsFeed peep="this is a peep"
+    />
   </div>
 </template>
 
