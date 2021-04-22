@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <NewsFeed peep="this is a peep"
-    />
+    <NewPeep />
+    <NewsFeed />
   </div>
 </template>
 
 <script>
+import NewPeep from './components/NewPeep.vue'
 import NewsFeed from './components/NewsFeed.vue'
 
 export default {
   name: 'App',
   components: {
+    NewPeep,
     NewsFeed
   }
 }

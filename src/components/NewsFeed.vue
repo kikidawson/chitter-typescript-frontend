@@ -33,16 +33,6 @@ export default {
   }
 }
 
-// var example1 = new Vue({
-//   el: '#example-1',
-//   data: {
-//     items: [
-//       '10 party hats',
-//       '2 board games',
-//       '20 cups'
-//     ]
-//   }
-// })
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
